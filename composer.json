@@ -1,0 +1,15 @@
+{
+    "name": "homeceu/emailables",
+    "description": "Emailable and Attachable interfaces",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
+    },
+    "authors": [
+        {
+            "name": "dan",
+            "email": "dan@homeceu.com"
+        }
+    ],
+    "require": {}
+}
