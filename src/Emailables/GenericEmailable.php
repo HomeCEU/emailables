@@ -16,21 +16,9 @@ final class GenericEmailable implements Emailable
     protected $body;
     /** @var array */
     protected $attachments = [];
-    /** @var string */
-    protected $rawJson;
-
-    /**
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->rawJson;
-    }
 
     private function __construct($json)
     {
-        $this->rawJson = $json;
-
         $jsonArray        = json_decode($json, true);
         $this->subject    = $jsonArray['subject'];
         $this->sender     = $jsonArray['from'];
