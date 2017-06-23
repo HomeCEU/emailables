@@ -89,7 +89,7 @@ final class GenericEmailable implements Emailable
     }
 
     /**
-     * @param \HomeCEU\Email\Attachable $attachment
+     * @param Attachable $attachment
      */
     public function addAttachment(Attachable $attachment)
     {
