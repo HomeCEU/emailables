@@ -9,6 +9,11 @@ interface Attachable
     /**
      * @return string
      */
+    public function isBase64Encoded();
+
+    /**
+     * @return string
+     */
     public function __toString();
 
     /**
@@ -22,7 +27,7 @@ interface Attachable
     public function getContentType();
 
     /**
-     * @return string
+     * @return string file location or base64 encoded
      */
-    public function getFileLocation();
+    public function getContent();
 }
