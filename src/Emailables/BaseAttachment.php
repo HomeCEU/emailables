@@ -6,8 +6,9 @@ namespace Emailables;
 class BaseAttachment implements Attachable
 {
     protected $fileName;
-    protected $fileLocation;
+    protected $content;
     protected $contentType;
+    protected $isBase64 = false;
 
     public function __toString()
     {
@@ -16,6 +17,17 @@ class BaseAttachment implements Attachable
             'FileLocation' => $this->getFileLocation(),
             'ContentType'  => $this->getContentType()
         ]);
+    }
+
+    public function setIsBase64($trueFalse)
+    {
+        $this->isBase64 = $trueFalse;
+        return $this;
+    }
+
+    public function isBase64Encoded()
+    {
+        return $this->isBase64;
     }
 
     /**
@@ -29,14 +41,9 @@ class BaseAttachment implements Attachable
         return $this;
     }
 
-    /**
-     * @param string $fileLocation
-     *
-     * @return $this
-     */
-    public function setFileLocation($fileLocation)
+    public function setContent($content)
     {
-        $this->fileLocation = $fileLocation;
+        $this->content = $content;
         return $this;
     }
 
@@ -70,8 +77,8 @@ class BaseAttachment implements Attachable
     /**
      * @return string
      */
-    public function getFileLocation()
+    public function getContent()
     {
-        return $this->fileLocation;
+        return $this->content;
     }
 }
